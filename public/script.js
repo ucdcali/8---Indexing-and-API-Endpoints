@@ -28,10 +28,12 @@ async function updateStates() {
       const container = document.getElementById('statesContainer');
       container.innerHTML = ''; // Clear previous results
       states.forEach(state => {
+        let cleanUrl = state.flagImage + ".svg";
+
         const stateDiv = document.createElement('div');
         stateDiv.innerHTML = `
           <h2>${state.name}</h2>
-          <img src="${state.flagImage}" alt="Flag of ${state.name}" style="width:100px;">
+          <img src="/flags/${cleanUrl}" alt="Flag of ${state.name}" style="width:100px;">
           <p>Population: ${state.population.toLocaleString()}</p>
         `;
         container.appendChild(stateDiv);
